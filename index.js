@@ -8,7 +8,7 @@ const { PORT = 3000 } = process.env;
 
 app.use(bodyParser.json());
 
-app.use('/api/convocatiorias-ms', routes);
+app.use('/api/empresas-ms', routes);
 
 app.listen(PORT, () => {
   console.log('Escuchando puerto:', PORT);
