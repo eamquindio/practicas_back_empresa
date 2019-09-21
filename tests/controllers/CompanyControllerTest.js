@@ -45,7 +45,7 @@ describe('Company CRUD flows', () => {
 
     return chai
       .request(app)
-      .get(`${API}/find_by_name?NIT=q`)
+      .get(`${API}/find_by_nit?NIT=q`)
       .then(async (response) => {
         const { body } = response;
         assert.deepEqual(body[0], {
@@ -66,7 +66,7 @@ describe('Company CRUD flows', () => {
 
   it('find person by name empty test', async () => chai
     .request(app)
-    .get(`${API}/find_by_name?NIT=q`)
+    .get(`${API}/find_by_nit?NIT=q`)
     .then(async (response) => {
       assert.equal(response.status, 204);
     }));

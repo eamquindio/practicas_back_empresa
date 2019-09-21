@@ -1,8 +1,8 @@
 const CompanyService = module.exports;
 const CompanyRepository = require('../repositories/CompanyRepository');
 
-CompanyService.findByName = (NIT) => {
+CompanyService.findByNit = (NIT) => {
   console.log('findByName company');
 
-  return CompanyRepository.findByName(NIT);
+  return CompanyRepository.findByNit(NIT);
 };

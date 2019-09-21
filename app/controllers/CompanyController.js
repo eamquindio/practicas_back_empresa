@@ -14,10 +14,10 @@ CompanyController.save = async (req, res, next) => {
   }
 };
 
-CompanyController.findByName = async (req, res, next) => {
+CompanyController.findByNit = async (req, res, next) => {
   try {
     const { query: { NIT } } = req;
-    const company = await CompanyService.findByName(NIT);
+    const company = await CompanyService.findByNit(NIT);
 
     if (company.length === 0) return res.status(204).send(company);
 
