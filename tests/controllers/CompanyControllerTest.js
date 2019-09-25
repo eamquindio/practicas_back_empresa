@@ -15,7 +15,7 @@ describe('Company CRUD flows', () => {
     await Helper.clear();
   });
 
-  it('find person by name test', async () => {
+  it('find company by nit test', async () => {
     await CompanyRepository.create([{
       id: 1,
       NIT: 'q',
@@ -64,7 +64,7 @@ describe('Company CRUD flows', () => {
       });
   });
 
-  it('find person by name empty test', async () => chai
+  it('find company by nit empty test', async () => chai
     .request(app)
     .get(`${API}/find_by_nit?NIT=q`)
     .then(async (response) => {
