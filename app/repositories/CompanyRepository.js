@@ -7,8 +7,6 @@ CompanyRepository.findByNit = NIT => DB('company').select('*').where({ NIT });
 
 CompanyRepository.findBySector = sector => DB('company').select('*').where({ sector });
 
-CompanyRepository.findByBusinessName = businessName => DB('company').select('*').where({ business_name: businessName });
-
 CompanyRepository.findByName = name => DB('company').select('*').where({ name });
 
 CompanyRepository.findByMail = mail => DB('company').select('*').where({ mail });
