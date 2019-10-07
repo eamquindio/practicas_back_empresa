@@ -6,3 +6,9 @@ CompanyService.findByNit = (NIT) => {
 
   return CompanyRepository.findByNit(NIT);
 };
+
+CompanyService.findCompanyByFilters = (params) => {
+  console.log('findCompanyByFilters company');
+
+  return CompanyRepository.findCompanyByFilters(params);
+};
