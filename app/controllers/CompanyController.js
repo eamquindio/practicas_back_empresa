@@ -44,21 +44,6 @@ CompanyController.findBySector = async (req, res, next) => {
   }
 };
 
-CompanyController.findByBusinessName = async (req, res, next) => {
-  try {
-    const { query: { businnesName } } = req;
-    const company = await CompanyService.findByBusinessName(businnesName);
-
-    if (company.length === 0) return res.status(204).send(company);
-
-    return res.send(company);
-  } catch (error) {
-    console.log(error);
-
-    return next(error);
-  }
-};
-
 CompanyController.findByName = async (req, res, next) => {
   try {
     const { query: { name } } = req;

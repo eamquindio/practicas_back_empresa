@@ -13,12 +13,6 @@ CompanyService.findBySector = (sector) => {
   return CompanyRepository.findBySector(sector);
 };
 
-CompanyService.findByBusinessName = (businessName) => {
-  console.log('findByBusinessName company');
-
-  return CompanyRepository.findByBusinessName(businessName);
-};
-
 CompanyService.findByName = (name) => {
   console.log('findByName 2 company');
 
