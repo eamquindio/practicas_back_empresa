@@ -6,3 +6,27 @@ CompanyService.findByNit = (NIT) => {
 
   return CompanyRepository.findByNit(NIT);
 };
+
+CompanyService.findBySector = (sector) => {
+  console.log('findBySector company');
+
+  return CompanyRepository.findBySector(sector);
+};
+
+CompanyService.findByBusinessName = (businessName) => {
+  console.log('findByBusinessName company');
+
+  return CompanyRepository.findByBusinessName(businessName);
+};
+
+CompanyService.findByName = (name) => {
+  console.log('findByName company');
+
+  return CompanyRepository.findByName(name);
+};
+
+CompanyService.findByMail = (mail) => {
+  console.log('findByMail company');
+
+  return CompanyRepository.findByMail(mail);
+};

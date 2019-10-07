@@ -15,5 +15,9 @@ router.get('/persons/all', PersonController.listAll);
 // Company Routes
 router.post('/company', CompanyController.save);
 router.get('/company/find_by_nit', CompanyController.findByNit);
+router.get('/company/find_by_sector', CompanyController.findBySector);
+router.get('/company/find_by_name', CompanyController.findByName);
+router.get('/company/find_by_mail', CompanyController.findByMail);
+router.get('/company/find_by_business_mail', CompanyController.findByBusinessName);
 
 module.exports = router;
