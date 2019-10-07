@@ -20,7 +20,7 @@ CompanyService.findByBusinessName = (businessName) => {
 };
 
 CompanyService.findByName = (name) => {
-  console.log('findByName company');
+  console.log('findByName 2 company');
 
   return CompanyRepository.findByName(name);
 };
