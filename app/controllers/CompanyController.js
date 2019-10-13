@@ -28,3 +28,18 @@ CompanyController.findByNit = async (req, res, next) => {
     return next(error);
   }
 };
+
+CompanyController.findCompanyByFilters = async (req, res, next) => {
+  try {
+    const { query } = req;
+    const company = await CompanyService.findCompanyByFilters(query);
+
+    if (company.length === 0) return res.status(204).send(company);
+
+    return res.send(company);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
+};
