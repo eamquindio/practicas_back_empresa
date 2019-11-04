@@ -33,7 +33,7 @@ describe('Company CRUD flows', () => {
     })
     .then(async () => {
       const companyToAssert = await CompanyRepository.findByNit('q');
-      assert.equal(companyToAssert.NIT, 'q');
+      assert.equal(companyToAssert.id, 1);
     }));
 
   it('create company already exists test', async () => {
