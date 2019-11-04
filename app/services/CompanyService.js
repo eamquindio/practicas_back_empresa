@@ -1,6 +1,16 @@
 const CompanyService = module.exports;
 const CompanyRepository = require('../repositories/CompanyRepository');
 
+CompanyService.create = async (company) => {
+  console.log('creating company');
+
+  const companyToValidate = await this.find(company.id);
+  console.log(companyToValidate);
+  if (companyToValidate) throw ErrorHandler.BaseError('company already exists', 409);
+
+  return CompanyRepository.create(company);
+};
+
 CompanyService.findByNit = (NIT) => {
   console.log('findByName company');
 
