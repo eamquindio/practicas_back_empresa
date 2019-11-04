@@ -15,6 +15,63 @@ describe('Company CRUD flows', () => {
     await Helper.clear();
   });
 
+  it('create company test', () => chai
+    .request(app)
+    .post(API)
+    .send({
+      id: 1,
+      NIT: 'q',
+      business_name: 'q',
+      city_id: 1,
+      society_type: 1,
+      name: 'q',
+      address: 'q',
+      phone: 1,
+      representative: 'q',
+      sector: 'q',
+      mail: 'q',
+    })
+    .then(async () => {
+      const companyToAssert = await CompanyRepository.findByNit('q');
+      assert.equal(companyToAssert.NIT, 'q');
+    }));
+
+  it('create company already exists test', async () => {
+    await CompanyRepository.create({
+      id: 1,
+      NIT: 'q',
+      business_name: 'q',
+      city_id: 1,
+      society_type: 1,
+      name: 'q',
+      address: 'q',
+      phone: 1,
+      representative: 'q',
+      sector: 'q',
+      mail: 'q',
+    });
+
+    return chai
+      .request(app)
+      .post(API)
+      .send({
+        id: 1,
+        NIT: 'q',
+        business_name: 'q',
+        city_id: 1,
+        society_type: 1,
+        name: 'q',
+        address: 'q',
+        phone: 1,
+        representative: 'q',
+        sector: 'q',
+        mail: 'q',
+      })
+      .catch((error) => {
+        assert.equal(error.status, 404);
+      });
+  });
+
   it('find company by nit test', async () => {
     await CompanyRepository.create([{
       id: 1,
