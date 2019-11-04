@@ -5,7 +5,7 @@ const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 CompanyService.create = async (company) => {
   console.log('creating company');
 
-  const companyToValidate = await this.find(company.id);
+  const companyToValidate = await this.findByNit(company.NIT);
   console.log(companyToValidate);
   if (companyToValidate) throw ErrorHandler.BaseError('company already exists', 409);
 
