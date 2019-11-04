@@ -1,5 +1,6 @@
 const CompanyService = module.exports;
 const CompanyRepository = require('../repositories/CompanyRepository');
+const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 CompanyService.create = async (company) => {
   console.log('creating company');
