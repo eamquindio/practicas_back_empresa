@@ -20,7 +20,7 @@ describe('Company CRUD flows', () => {
     .post(API)
     .send({
       id: 100,
-      NIT: 'q',
+      NIT: 'qk',
       business_name: 'q',
       city_id: 1,
       society_type: 1,
@@ -32,8 +32,8 @@ describe('Company CRUD flows', () => {
       mail: 'q',
     })
     .then(async () => {
-      const companyToAssert = await CompanyRepository.findByNit('q');
-      assert.equal(companyToAssert.id, 100);
+      const companyToAssert = await CompanyRepository.findByNit('qk');
+      assert.equal(companyToAssert[0].id, 100);
     }));
 
   it('create company already exists test', async () => {
