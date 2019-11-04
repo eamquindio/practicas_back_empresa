@@ -33,6 +33,7 @@ describe('Company CRUD flows', () => {
     })
     .then(async () => {
       const companyToAssert = await CompanyRepository.findByNit('qk');
+      console.log(companyToAssert);
       assert.equal(companyToAssert[0].id, 100);
     }));
 
