@@ -6,14 +6,14 @@ CompanyService.create = async (company) => {
   console.log('creating company');
 
   const companyToValidate = await this.findByNit(company.NIT);
-  console.log(companyToValidate);
-  if (companyToValidate) throw ErrorHandler.BaseError('company already exists', 409);
+  console.log(companyToValidate[0]);
+  if (companyToValidate[0]) throw ErrorHandler.BaseError('company already exists', 409);
 
   return CompanyRepository.create(company);
 };
 
 CompanyService.findByNit = (NIT) => {
-  console.log('findByName company');
+  console.log('findByNIT company');
 
   return CompanyRepository.findByNit(NIT);
 };
