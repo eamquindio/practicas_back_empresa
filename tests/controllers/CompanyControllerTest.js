@@ -24,12 +24,17 @@ describe('Company CRUD flows', () => {
       business_name: 'q',
       city_id: 1,
       society_type: 1,
-      name: 'q',
       address: 'q',
       phone: 1,
       representative: 'q',
       sector: 'q',
       mail: 'q',
+      person_type: 'q',
+      limited_partnership: 'q',
+      registration_date_commerce_chamber: 'q',
+      cell_phone: 1,
+      department_id: 1,
+      business_description: 'q',
     })
     .then(async () => {
       const companyToAssert = await CompanyRepository.findByNit('qk');
@@ -50,6 +55,12 @@ describe('Company CRUD flows', () => {
       representative: 'q',
       sector: 'q',
       mail: 'q',
+      person_type: 'q',
+      limited_partnership: 'q',
+      registration_date_commerce_chamber: 'q',
+      cell_phone: 1,
+      department_id: 1,
+      business_description: 'q',
     });
 
     return chai
@@ -67,6 +78,12 @@ describe('Company CRUD flows', () => {
         representative: 'q',
         sector: 'q',
         mail: 'q',
+        person_type: 'q',
+        limited_partnership: 'q',
+        registration_date_commerce_chamber: 'q',
+        cell_phone: 1,
+        department_id: 1,
+        business_description: 'q',
       })
       .catch((error) => {
         assert.equal(error.status, 404);
@@ -86,6 +103,12 @@ describe('Company CRUD flows', () => {
       representative: 'q',
       sector: 'q',
       mail: 'q',
+      person_type: 'q',
+      limited_partnership: 'q',
+      registration_date_commerce_chamber: 'q',
+      cell_phone: 1,
+      department_id: 1,
+      business_description: 'q',
     },
     {
       id: 2,
@@ -99,6 +122,12 @@ describe('Company CRUD flows', () => {
       representative: 'q',
       sector: 'q',
       mail: 'q',
+      person_type: 'q',
+      limited_partnership: 'q',
+      registration_date_commerce_chamber: 'q',
+      cell_phone: 1,
+      department_id: 1,
+      business_description: 'q',
     }]);
 
     return chai
@@ -118,6 +147,12 @@ describe('Company CRUD flows', () => {
           representative: 'q',
           sector: 'q',
           mail: 'q',
+          person_type: 'q',
+          limited_partnership: 'q',
+          registration_date_commerce_chamber: 'q',
+          cell_phone: 1,
+          department_id: 1,
+          business_description: 'q',
         });
       });
   });
