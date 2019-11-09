@@ -10,5 +10,10 @@ exports.up = knex =>
 
 exports.down = knex =>
   knex.schema.table('company', (table) => {
-    table.dropColumn('name');
+    table.dropColumn('person_type');
+    table.dropColumn('limited_partnership');
+    table.dropColumn('registration_date_commerce_chamber');
+    table.dropColumn('cell_phone');
+    table.dropColumn('department_id');
+    table.dropColumn('business_description');
   });
