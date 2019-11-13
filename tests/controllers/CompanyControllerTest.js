@@ -19,6 +19,7 @@ describe('Company CRUD flows', () => {
     .request(app)
     .post(API)
     .send({
+      id: 50,
       NIT: 'qk',
       business_name: 'q',
       city_id: 1,
@@ -43,6 +44,7 @@ describe('Company CRUD flows', () => {
 
   it('create company already exists test', async () => {
     await CompanyRepository.create({
+      id: 50,
       NIT: 'q',
       business_name: 'q',
       city_id: 1,
@@ -65,6 +67,7 @@ describe('Company CRUD flows', () => {
       .request(app)
       .post(API)
       .send({
+        id: 50,
         NIT: 'q',
         business_name: 'q',
         city_id: 1,
@@ -89,6 +92,7 @@ describe('Company CRUD flows', () => {
 
   it('find company by nit test', async () => {
     await CompanyRepository.create([{
+      id: 50,
       NIT: 'q',
       business_name: 'q',
       city_id: 1,
@@ -107,6 +111,7 @@ describe('Company CRUD flows', () => {
       business_description: 'q',
     },
     {
+      id: 51,
       NIT: 'q',
       business_name: 'q',
       city_id: 1,
@@ -131,6 +136,7 @@ describe('Company CRUD flows', () => {
       .then(async (response) => {
         const { body } = response;
         assert.deepEqual(body[0], {
+          id: 50,
           NIT: 'q',
           business_name: 'q',
           city_id: 1,
