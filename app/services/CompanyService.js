@@ -12,7 +12,7 @@ CompanyService.create = async (company) => {
   return CompanyRepository.create(company);
 };
 
-CompanyService.findByNit = (NIT) => {
+CompanyService.findByNit = async (NIT) => {
   console.log('findByNIT company');
 
   return CompanyRepository.findByNit(NIT);

@@ -14,7 +14,7 @@ router.get('/persons/all', PersonController.listAll);
 
 // Company Routes
 router.post('/company', CompanyController.save);
-router.get('/company/find_by_nit', CompanyController.findByNit);
+router.get('/company/find_by_nit/:NIT(\\w+)', CompanyController.findByNit);
 router.get('/company/find_company_by_filters', CompanyController.findByNit);
 
 module.exports = router;
